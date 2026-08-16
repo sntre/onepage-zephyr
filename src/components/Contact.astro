@@ -1,0 +1,79 @@
+---
+import site from '@content/site.json';
+
+const { title, subtitle, provider, formspreeId, netlifyFormName } = site.contact;
+const isNetlify = provider === 'netlify';
+const formAction = isNetlify ? undefined : `https://formspree.io/f/${formspreeId}`;
+---
+
+<section id="contact" class="py-24 sm:py-32">
+  <div class="mx-auto max-w-2xl px-6">
+    <div class="reveal text-center">
+      <h2 class="font-bold tracking-tight">{title}</h2>
+      <p class="text-base-content/70 mt-4">{subtitle}</p>
+    </div>
+
+    <form
+      class="reveal mt-12 space-y-5"
+      style="transition-delay: 120ms"
+      method="POST"
+      action={formAction}
+      name={isNetlify ? netlifyFormName : undefined}
+      data-netlify={isNetlify ? 'true' : undefined}
+      netlify-honeypot={isNetlify ? 'bot-field' : undefined}
+    >
+      {isNetlify && <input type="hidden" name="form-name" value={netlifyFormName} />}
+      {
+        isNetlify && (
+          <p class="hidden">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+        )
+      }
+
+      <div class="fieldset">
+        <label class="fieldset-label" for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          minlength="2"
+          placeholder="Jane Doe"
+          class="input validator w-full"
+        />
+        <p class="validator-hint">Please enter your name (at least 2 characters).</p>
+      </div>
+
+      <div class="fieldset">
+        <label class="fieldset-label" for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="jane@example.com"
+          class="input validator w-full"
+        />
+        <p class="validator-hint">Please enter a valid email address.</p>
+      </div>
+
+      <div class="fieldset">
+        <label class="fieldset-label" for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          minlength="10"
+          rows="5"
+          placeholder="How can we help?"
+          class="textarea validator w-full"></textarea>
+        <p class="validator-hint">Please enter at least 10 characters.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-full">Send message</button>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import { ArrowRight } from '@lucide/astro';
+import site from '@content/site.json';
+
+const { eyebrow, headline, subheadline, primaryCta, secondaryCta } = site.hero;
+---
+
+<section
+  id="hero"
+  class="from-primary/10 via-base-100 to-secondary/10 relative overflow-hidden bg-gradient-to-br"
+>
+  <div class="hero min-h-[85vh]">
+    <div class="hero-content flex-col px-6 py-24 text-center">
+      <span
+        class="badge badge-outline badge-primary animate-fade-in-up mb-6"
+        style="animation-delay: 0ms"
+      >
+        {eyebrow}
+      </span>
+
+      <h1
+        class="animate-fade-in-up max-w-3xl font-bold tracking-tight"
+        style="animation-delay: 80ms"
+      >
+        {headline}
+      </h1>
+
+      <p
+        class="text-base-content/70 animate-fade-in-up mt-6 max-w-2xl text-lg"
+        style="animation-delay: 160ms"
+      >
+        {subheadline}
+      </p>
+
+      <div
+        class="animate-fade-in-up mt-10 flex flex-col gap-4 sm:flex-row"
+        style="animation-delay: 240ms"
+      >
+        <a href={primaryCta.href} class="btn btn-primary btn-lg gap-2">
+          {primaryCta.label}
+          <ArrowRight class="size-5" aria-hidden="true" />
+        </a>
+        <a href={secondaryCta.href} class="btn btn-outline btn-lg">
+          {secondaryCta.label}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

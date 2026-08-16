@@ -1,0 +1,57 @@
+---
+import { icons } from '@lucide/astro';
+import site from '@content/site.json';
+import GithubIcon from '@components/icons/GithubIcon.astro';
+import LinkedinIcon from '@components/icons/LinkedinIcon.astro';
+
+// GitHub and LinkedIn logos aren't part of Lucide's icon set (trademarked
+// brand icons were dropped upstream) — see src/components/icons/ for the
+// small MIT-licensed stand-ins used instead.
+type IconComponent = (typeof icons)[keyof typeof icons] | typeof GithubIcon;
+const iconMap: Record<string, IconComponent> = {
+  ...icons,
+  Github: GithubIcon,
+  Linkedin: LinkedinIcon,
+};
+const fallbackIcon = icons.Circle;
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-base-200 bg-base-100 border-t">
+  <div class="mx-auto max-w-6xl px-6 py-12">
+    <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+      <p class="text-base-content/60 text-sm">
+        © {currentYear}
+        {site.name}. All rights reserved.
+      </p>
+
+      <ul class="flex items-center gap-2">
+        {
+          site.social.map((link) => {
+            const Icon = iconMap[link.icon] ?? fallbackIcon;
+            return (
+              <li>
+                <a
+                  href={link.href}
+                  aria-label={link.label}
+                  class="btn btn-ghost btn-circle btn-sm"
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                >
+                  <Icon class="size-5" aria-hidden="true" />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+
+    <p class="text-base-content/40 mt-6 text-center text-xs sm:text-left">
+      Built with <a href="https://github.com/sntre/onepage-zephyr" class="link link-hover"
+        >onepage-zephyr</a
+      > — open source under the MIT license.
+    </p>
+  </div>
+</footer>

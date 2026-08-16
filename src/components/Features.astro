@@ -1,0 +1,47 @@
+---
+import { icons } from '@lucide/astro';
+import site from '@content/site.json';
+
+const features = site.features;
+
+// Icon names in site.json map directly to @lucide/astro's PascalCase exports.
+type IconComponent = (typeof icons)[keyof typeof icons];
+const iconMap: Record<string, IconComponent> = icons;
+const fallbackIcon = icons.Circle;
+---
+
+<section id="features" class="py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <h2 class="font-bold tracking-tight">Everything you need, nothing you don't</h2>
+      <p class="text-base-content/70 mt-4">
+        A focused feature set designed to keep the bundle small and the experience fast.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map((feature, index) => {
+          const Icon = iconMap[feature.icon] ?? fallbackIcon;
+          return (
+            <div
+              class="card bg-base-100 border-base-200 reveal border shadow-sm transition-shadow hover:shadow-lg"
+              style={`transition-delay: ${index * 80}ms`}
+            >
+              <div class="card-body">
+                <div
+                  class="rounded-field bg-primary/10 text-primary mb-2 flex size-12 items-center justify-center"
+                  aria-hidden="true"
+                >
+                  <Icon class="size-6" aria-hidden="true" />
+                </div>
+                <h3 class="card-title">{feature.title}</h3>
+                <p class="text-base-content/70">{feature.description}</p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

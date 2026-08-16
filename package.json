@@ -1,0 +1,63 @@
+{
+  "name": "onepage-zephyr",
+  "version": "0.1.0",
+  "description": "Ultra-light, modern, high-performance one-page boilerplate built with Astro 5, Tailwind CSS v4 & DaisyUI 5.",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "author": "nefa.io",
+  "homepage": "https://github.com/sntre/onepage-zephyr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sntre/onepage-zephyr.git"
+  },
+  "keywords": [
+    "astro",
+    "tailwindcss",
+    "daisyui",
+    "one-page",
+    "boilerplate",
+    "landing-page",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "sync": "astro sync",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/sitemap": "^3.7.3",
+    "@lucide/astro": "^1.31.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^5.18.2",
+    "astro-compress": "^2.4.3",
+    "daisyui": "^5.7.17",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@typescript-eslint/parser": "^8.67.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript-eslint": "^8.67.0",
+    "vite": "^6.4.3"
+  }
+}
