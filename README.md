@@ -19,9 +19,7 @@ Built by [nefa.io](https://nefa.io).
 
 ## Screenshot
 
-<!-- Replace docs/screenshot-placeholder.svg with a real screenshot of your deployed site. -->
-
-![onepage-zephyr screenshot placeholder](./docs/screenshot-placeholder.svg)
+![onepage-zephyr screenshot](./docs/screenshot.png)
 
 ## Stack
 
