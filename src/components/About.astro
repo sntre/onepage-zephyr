@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import site from '@content/site.json';
+import aboutImage from '../assets/about.svg';
+
+const { title, body, image, stats } = site.about;
+---
+
+<section id="about" class="bg-base-200/40 py-24 sm:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div class="reveal">
+        <Image
+          src={aboutImage}
+          alt={image.alt}
+          width={960}
+          height={720}
+          loading="lazy"
+          decoding="async"
+          class="rounded-box w-full shadow-lg"
+        />
+      </div>
+
+      <div class="reveal" style="transition-delay: 120ms">
+        <h2 class="font-bold tracking-tight">{title}</h2>
+        <p class="text-base-content/70 mt-6 leading-relaxed">{body}</p>
+
+        <dl class="border-base-300 mt-10 grid grid-cols-3 gap-6 border-t pt-8">
+          {
+            stats.map((stat) => (
+              <div>
+                <dt class="text-base-content/60 text-sm">{stat.label}</dt>
+                <dd class="text-primary text-3xl font-bold">{stat.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

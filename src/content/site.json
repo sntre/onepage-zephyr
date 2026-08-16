@@ -1,0 +1,91 @@
+{
+  "name": "nefa.io",
+  "title": "nefa.io — Build faster. Ship lighter.",
+  "description": "onepage-zephyr is an ultra-light, modern one-page boilerplate built with Astro, Tailwind CSS and DaisyUI. Fork it and ship your product's landing page in minutes.",
+  "url": "https://nefa.io",
+  "locale": "en",
+  "themeColor": "#2563eb",
+  "author": "nefa.io",
+  "twitterHandle": "@nefa_io",
+  "keywords": ["astro", "tailwindcss", "daisyui", "landing page", "one page", "boilerplate"],
+  "brand": {
+    "colors": {
+      "primary": "#2563eb",
+      "secondary": "#1e293b",
+      "accent": "#38bdf8"
+    },
+    "themes": ["light", "dark", "corporate"],
+    "defaultTheme": "corporate"
+  },
+  "nav": [
+    { "label": "Home", "href": "#hero" },
+    { "label": "Features", "href": "#features" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "hero": {
+    "eyebrow": "Open source · Astro 5 · Tailwind v4",
+    "headline": "Build faster. Ship lighter.",
+    "subheadline": "onepage-zephyr is a featherweight one-page boilerplate for product and marketing sites — 100/100 Lighthouse, zero superfluous JavaScript, dark mode included.",
+    "primaryCta": { "label": "Get Started", "href": "#contact" },
+    "secondaryCta": { "label": "Explore Features", "href": "#features" }
+  },
+  "features": [
+    {
+      "icon": "Zap",
+      "title": "Blazing Performance",
+      "description": "Ships near-zero client-side JavaScript. Built for a perfect 100/100 Lighthouse score out of the box."
+    },
+    {
+      "icon": "Palette",
+      "title": "Themeable by Design",
+      "description": "Light, dark and corporate themes powered by DaisyUI, with a persistent, flash-free toggle."
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "Accessible First",
+      "description": "Keyboard navigable, semantic markup, validated contrasts and a skip-to-content link built in."
+    },
+    {
+      "icon": "Search",
+      "title": "SEO Ready",
+      "description": "Auto-generated sitemap, robots.txt, OpenGraph, Twitter Cards and Schema.org markup out of the box."
+    },
+    {
+      "icon": "Smartphone",
+      "title": "Mobile First",
+      "description": "Responsive at every breakpoint, from small phones to ultra-wide desktop displays."
+    },
+    {
+      "icon": "GitFork",
+      "title": "Fork & Ship",
+      "description": "One JSON file to rebrand the whole site. Deploy to Vercel, Netlify or GitHub Pages in seconds."
+    }
+  ],
+  "about": {
+    "title": "Why onepage-zephyr?",
+    "body": "Most landing page templates drag in a full framework, a component library and a bundle of animation scripts just to display a headline. onepage-zephyr strips that away. It's pure Astro — HTML-first, islands-free — styled with Tailwind v4's CSS-native engine and DaisyUI's themeable components. The result is a boilerplate that starts fast and stays fast, however far you customize it.",
+    "image": {
+      "src": "/images/about.svg",
+      "alt": "Abstract illustration representing a lightweight, modern web stack"
+    },
+    "stats": [
+      { "label": "Lighthouse Performance", "value": "100" },
+      { "label": "Dependencies to configure", "value": "1" },
+      { "label": "Client-side JS frameworks", "value": "0" }
+    ]
+  },
+  "contact": {
+    "title": "Let's talk",
+    "subtitle": "Have a question about onepage-zephyr or want to use it for your project? Send us a message.",
+    "provider": "formspree",
+    "formspreeId": "your-form-id",
+    "netlifyFormName": "contact"
+  },
+  "social": [
+    { "icon": "Github", "label": "GitHub", "href": "https://github.com/sntre/onepage-zephyr" },
+    { "icon": "X", "label": "Twitter / X", "href": "https://twitter.com/nefa_io" },
+    { "icon": "Linkedin", "label": "LinkedIn", "href": "https://linkedin.com/company/nefa-io" },
+    { "icon": "Mail", "label": "Email", "href": "mailto:hello@nefa.io" }
+  ]
+}

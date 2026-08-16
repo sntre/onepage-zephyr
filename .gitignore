@@ -8,12 +8,15 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# astro
+.astro/
+dist/
 
 # production
 /build
+
+# lighthouse ci
+.lighthouseci/
 
 # misc
 .DS_Store

@@ -1,0 +1,38 @@
+---
+// Persistent dark-mode toggle. The FOUC-prevention script in Layout.astro
+// already applies the stored/preferred theme before first paint; this
+// component only needs to reflect and update that state on interaction.
+import { Sun, Moon } from '@lucide/astro';
+---
+
+<label class="swap swap-rotate btn btn-ghost btn-circle btn-sm" aria-label="Toggle dark mode">
+  <input type="checkbox" id="theme-toggle-checkbox" class="theme-controller-checkbox" />
+  <Sun class="swap-off size-5" aria-hidden="true" />
+  <Moon class="swap-on size-5" aria-hidden="true" />
+</label>
+
+<script>
+  const LIGHT_THEME = 'corporate';
+  const DARK_THEME = 'dark';
+  const STORAGE_KEY = 'theme';
+
+  const checkbox = document.getElementById('theme-toggle-checkbox') as HTMLInputElement | null;
+
+  const syncCheckbox = () => {
+    if (!checkbox) return;
+    checkbox.checked = document.documentElement.dataset.theme === DARK_THEME;
+  };
+
+  // Reflect whatever theme the head script already applied (avoids a second flash).
+  syncCheckbox();
+
+  checkbox?.addEventListener('change', () => {
+    const nextTheme = checkbox.checked ? DARK_THEME : LIGHT_THEME;
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem(STORAGE_KEY, nextTheme);
+  });
+
+  // Astro View Transitions swap the DOM but re-run page scripts; keep the
+  // checkbox in sync after each navigation between anchors/pages.
+  document.addEventListener('astro:after-swap', syncCheckbox);
+</script>
