@@ -12,6 +12,7 @@ Built by [nefa.io](https://nefa.io).
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![DaisyUI](https://img.shields.io/badge/DaisyUI-5-5A0EF8?logo=daisyui&logoColor=white)](https://daisyui.com)
 
+[![Deploy to nefa.io](https://nefa.io/deploy-button.svg)](https://console.nefa.io/auth/register?repository-url=https://github.com/sntre/onepage-zephyr)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sntre/onepage-zephyr)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sntre/onepage-zephyr)
 
@@ -132,6 +133,12 @@ DaisyUI themes are declared in `src/styles/global.css`:
 `localStorage` and applying it before first paint to avoid a flash.
 
 ## Deploy in 30 seconds
+
+### nefa.io
+
+[![Deploy to nefa.io](https://nefa.io/deploy-button.svg)](https://console.nefa.io/auth/register?repository-url=https://github.com/sntre/onepage-zephyr)
+
+One click, no config — [console.nefa.io](https://console.nefa.io) picks up the repo and builds it automatically.
 
 ### Vercel
 
